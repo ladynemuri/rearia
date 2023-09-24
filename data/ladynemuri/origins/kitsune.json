@@ -1,0 +1,25 @@
+{
+    "name": "Kitsune",
+    "description": "As you wander the endless forest, you finally see the end. You are a Kitsune, a trickster fox from Japanese Folklore. ",
+    "powers": [
+        "ladynemuri:kitsune/spirit_rush",
+        "ladynemuri:kitsune/rush",
+        "ladynemuri:kitsune/rush_stack",
+        "ladynemuri:kitsune/moonlight_meadow",
+        "ladynemuri:kitsune/pyra",
+        "ladynemuri:kitsune/pyra_light",
+        "ladynemuri:kitsune/foxtrot",
+        "ladynemuri:kitsune/canine_nature",
+        "ladynemuri:kitsune/attributes",
+        "ladynemuri:kitsune/shield",
+        "ladynemuri:kitsune/carnivore",
+        "ladynemuri:kitsune/pyra_particle",
+        "ladynemuri:kitsune/spectra"
+    ],
+    "icon": {
+        "item": "minecraft:cherry_sapling"
+    },
+    "upgrades": [],
+    "order": -10,
+    "impact": 2
+}
