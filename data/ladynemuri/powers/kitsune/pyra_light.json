@@ -1,0 +1,72 @@
+{
+    "name": "Pyralight",
+    "description": "By attacking something, you slowly build up fire underneath your claws. After a few attacks, you may unleash that fire to your target, setting them ablaze.",
+    "badges": [
+        {
+            "type": "origins:sprite",
+            "sprite": "origins:textures/gui/badge/star.png"
+        }
+    ],
+    "loading_priority": 17,
+    "type": "origins:multiple",
+    "three": {
+        "type": "origins:modify_damage_dealt",
+        "bientity_action": {
+            "type": "origins:if_else",
+            "condition": {
+                "type": "origins:actor_condition",
+                "condition": {
+                    "type": "origins:resource",
+                    "resource": "ladynemuri:kitsune/pyra",
+                    "comparison": "==",
+                    "compare_to": 2
+                }
+            },
+            "if_action": {
+                "type": "origins:and",
+                "actions": [
+                    {
+                        "type": "origins:actor_action",
+                        "action": {
+                            "type": "origins:and",
+                            "actions": [
+                                {
+                                    "type": "origins:play_sound",
+                                    "sound": "minecraft:entity.blaze.shoot",
+                                    "volume": 1,
+                                    "pitch": 1.5
+                                },
+                                {
+                                    "type": "origins:modify_resource",
+                                    "resource": "ladynemuri:kitsune/pyra",
+                                    "modifier": {
+                                        "operation": "add_base_early",
+                                        "value": -2
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "type": "origins:target_action",
+                        "action": {
+                            "type": "origins:set_on_fire",
+                            "duration": 8
+                        }
+                    }
+                ]
+            },
+            "else_action": {
+                "type": "origins:actor_action",
+                "action": {
+                    "type": "origins:modify_resource",
+                    "resource": "ladynemuri:kitsune/pyra",
+                    "modifier": {
+                        "operation": "add_base_early",
+                        "value": 1
+                    }
+                }
+            }
+        }
+    }
+}

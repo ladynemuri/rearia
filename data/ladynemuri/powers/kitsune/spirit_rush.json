@@ -1,0 +1,50 @@
+{
+    "name": "Spirit Rush",
+    "description": "You activate the spiritual energy you have gathered, allowing you to dash up to 3 times depending on the gathered amount.",
+    "badges": [
+        {
+            "type": "origins:sprite",
+            "sprite": "origins:textures/gui/badge/active.png"
+        }
+    ],
+    "loading_priority": 20,
+    "type": "origins:multiple",
+    "spirit_rush": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "ladynemuri:kitsune/rush",
+            "comparison": ">=",
+            "compare_to": 1
+        },
+        "type": "origins:active_self",
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:add_velocity",
+                    "z": 2,
+                    "space": "local_horizontal_normalized",
+                    "client": true,
+                    "server": true
+                },
+                {
+                    "type": "origins:modify_resource",
+                    "resource": "ladynemuri:kitsune/rush",
+                    "modifier": {
+                        "operation": "add_base_early",
+                        "value": -1
+                    }
+                },
+                {
+                    "type": "origins:play_sound",
+                    "sound": "minecraft:entity.ender_eye.death",
+                    "volume": 1,
+                    "pitch": 2
+                }
+            ]
+        },
+        "key": {
+            "key": "key.origins.primary_active"
+        }
+    }
+}

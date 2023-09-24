@@ -1,0 +1,34 @@
+{
+    "name": "Ictiokinesis",
+    "description": "As a natural trickster, you’ve developed methods to help when you play with someone. You’ve gained the ability to turn invisible on command but only for a short period of time. ",
+    "badges": [
+        {
+            "type": "origins:sprite",
+            "sprite": "origins:textures/gui/badge/active.png"
+        }
+    ],
+    "loading_priority": 18,
+    "type": "origins:active_self",
+    "entity_action": {
+        "type": "origins:apply_effect",
+        "effects": [
+            {
+                "effect": "invisibility",
+                "duration": 200,
+                "amplifier": 0,
+                "show_particles": true,
+                "show_icon": true
+            }
+        ]
+    },
+    "cooldown": 200,
+    "hud_render": {
+        "should_render": true,
+        "sprite_location": "origins:textures/gui/community/huang/resource_bar_01.png",
+        "bar_index": 18
+    },
+    "key": {
+        "key": "key.origins.secondary_active",
+        "continuous": true
+    }
+}

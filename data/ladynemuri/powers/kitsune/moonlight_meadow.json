@@ -1,0 +1,69 @@
+{
+    "name": "Moonlight Meadow",
+    "description": "Over time, you’ve adapted to the wilderness and have begun to use the night as a veil. During the night, you gain a small speed & strength buff. However, in exchange for this buff, you are weaker during the day. ",
+    "badges": [
+        {
+            "type": "origins:tooltip",
+            "text": "During the night, you gain strength, speed and night vision.",
+            "sprite": "origins:textures/gui/badge/info.png"
+        }
+    ],
+    "loading_priority": 16,
+    "type": "origins:multiple",
+    "night": {
+        "condition": {
+            "inverted": true,
+            "type": "origins:daytime"
+        },
+        "type": "origins:stacking_status_effect",
+        "min_stacks": 0,
+        "max_stacks": 3,
+        "duration_per_stack": 40,
+        "tick_rate": 10,
+        "effects": [
+            {
+                "effect": "minecraft:strength",
+                "duration": 120,
+                "amplifier": 0,
+                "is_ambient": true,
+                "show_particles": false,
+                "show_icon": false
+            },
+            {
+                "effect": "minecraft:speed",
+                "duration": 120,
+                "amplifier": 0,
+                "is_ambient": true,
+                "show_particles": false,
+                "show_icon": false
+            },
+            {
+                "effect": "minecraft:night_vision",
+                "duration": 200,
+                "amplifier": 1,
+                "is_ambient": true,
+                "show_particles": false,
+                "show_icon": false
+            }
+        ]
+    },
+    "day": {
+        "condition": {
+            "type": "origins:daytime"
+        },
+        "type": "origins:stacking_status_effect",
+        "min_stacks": 0,
+        "max_stacks": 2,
+        "duration_per_stack": 40,
+        "tick_rate": 10,
+        "effects": [
+            {
+                "effect": "minecraft:slowness",
+                "duration": 40,
+                "amplifier": 0,
+                "show_particles": false,
+                "show_icon": true
+            }
+        ]
+    }
+}

@@ -1,0 +1,38 @@
+{
+    "name": "Rush Stack",
+    "description": "When Kitsune hits an entity, she gains a rush stack. ",
+    "hidden": true,
+    "loading_priority": 1,
+    "condition": {
+        "type": "origins:resource",
+        "resource": "ladynemuri:kitsune/rush",
+        "comparison": "<=",
+        "compare_to": 3
+    },
+    "type": "origins:self_action_on_hit",
+    "entity_action": {
+        "type": "origins:and",
+        "actions": [
+            {
+                "type": "origins:play_sound",
+                "sound": "minecraft:block.amethyst_block.fall",
+                "volume": 1,
+                "pitch": 2
+            },
+            {
+                "type": "origins:and",
+                "actions": [
+                    {
+                        "type": "origins:modify_resource",
+                        "resource": "ladynemuri:kitsune/rush",
+                        "modifier": {
+                            "operation": "add_base_early",
+                            "value": 1
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    "cooldown": 1
+}

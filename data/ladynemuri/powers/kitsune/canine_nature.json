@@ -1,0 +1,33 @@
+{
+    "name": "Canine Nature",
+    "description": "As a fox, you are considerably lighter. You have 9 hearts and can’t wear strong armor as a result of your smaller body. You have decreased reach thanks to your smaller arms and you may only eat meat. ",
+    "badges": [
+        {
+            "type": "origins:tooltip",
+            "text": "You can only wear the armor equivalent of chainmail. You can only eat meat. You lose 2.0 points of health. You have 1 block less of reach. You can't use a shield.",
+            "sprite": "origins:textures/gui/badge/info.png"
+        }
+    ],
+    "loading_priority": 14,
+    "type": "origins:restrict_armor",
+    "head": {
+        "type": "origins:armor_value",
+        "comparison": "<=",
+        "compare_to": 2
+    },
+    "chest": {
+        "type": "origins:amount",
+        "comparison": "<=",
+        "compare_to": 5
+    },
+    "legs": {
+        "type": "origins:armor_value",
+        "comparison": "<=",
+        "compare_to": 4
+    },
+    "feet": {
+        "type": "origins:armor_value",
+        "comparison": "<=",
+        "compare_to": 1
+    }
+}
